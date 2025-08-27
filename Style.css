@@ -1412,7 +1412,7 @@ form textarea::placeholder {
     grid-template-columns: 18rem auto !important;
     gap: 2rem !important;
     background: var(--color-gray-900) !important;
-    padding: 2rem 2rem !important;
+    padding: 2rem 1rem !important;
     margin-bottom: 3rem !important;
     border-radius: var(--card-border-radius-2) !important;
 }
@@ -1426,8 +1426,8 @@ form textarea::placeholder {
     height: fit-content !important;
     align-items: center !important;
     justify-content: center !important;
-    margin: 2rem 2rem !important;
     width: 90% !important;
+    margin: 2rem 2rem !important;
 }
 
 .dashboard aside ul {
@@ -2206,14 +2206,26 @@ form textarea::placeholder {
 ==============================================================================*/
 
 @media screen and (max-width: 600px) {
-    .contact__container {
-        padding: 1.5rem !important;
-        gap: 2rem !important;
-    }
+.contact__container {
+    display: grid !important;
+    grid-template-columns: 1fr !important; /* Changed to a single column for better mobile layout */
+    gap: 2rem !important; /* Reduced gap for smaller screens */
+    padding: 2rem 1rem !important; /* Adjusted padding */
+    background: var(--color-gray-900) !important;
+    border-radius: var(--card-border-radius-3) !important;
+    box-shadow: 0 1rem 2rem rgba(0, 0, 0, 0.3) !important;
+    margin-top: 7rem !important; /* Adjusted margin */
+    margin-bottom: 4rem !important;
+}
 
-    .contact__aside {
-        padding: 1.5rem!important;
-    }
+.contact__aside {
+    background: var(--color-bg) !important;
+    padding: 1rem !important; /* Adjusted padding */
+    border-radius: var(--card-border-radius-3) !important; /* Consistent border radius */
+    margin: 0 0rem !important; /* Removed unnecessary margins */
+    margin-top: 1.5rem !important;
+    width: 100% !important; /* Set to full width */
+}
 
     .form__name {
         flex-direction: column !important;
@@ -2655,6 +2667,7 @@ form textarea::placeholder {
         font-size: 0.9rem !important;
         position: relative !important;
         transition: none !important;
+        font-size: 1rem !important;
     }
     
     .dashboard main table td .btn:hover {

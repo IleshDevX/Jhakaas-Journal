@@ -160,6 +160,120 @@ function initializeOtherManagers() {
         });
     }
     
+    // Category Buttons: navigate to category page with query param
+    const categoryButtons = document.querySelectorAll('.category__button');
+    if (categoryButtons && categoryButtons.length > 0) {
+        categoryButtons.forEach(function(button) {
+            button.addEventListener('click', function(e) {
+                e.preventDefault();
+                const label = (this.textContent || '').trim();
+                if (!label) return;
+                window.location.href = 'Category-Post.html?category=' + encodeURIComponent(label);
+            });
+        });
+    }
+    
+    // Apply category filter on Category-Post.html if ?category= is present
+    (function applyCategoryFromUrl() {
+        if (!/Category-Post\.html$/i.test(window.location.pathname)) return;
+        const params = new URLSearchParams(window.location.search);
+        const selected = (params.get('category') || '').trim();
+        if (!selected) return;
+        
+        const header = document.querySelector('.category__title h2');
+        if (header) header.textContent = selected;
+        
+        const postsContainer = document.querySelector('.posts__container');
+        const articles = postsContainer ? postsContainer.querySelectorAll('article') : [];
+        if (!articles || articles.length === 0) return;
+        
+        const selectedLc = selected.toLowerCase();
+        let anyShown = false;
+        articles.forEach(function(article) {
+            const badge = (article.querySelector('.post_button')?.textContent || '').toLowerCase();
+            const match = badge.includes(selectedLc);
+            article.style.display = match ? 'grid' : 'none';
+            if (match) anyShown = true;
+        });
+        // Show all if no matches to avoid empty page
+        if (!anyShown) {
+            articles.forEach(function(article) { article.style.display = 'grid'; });
+        }
+    })();
+
+    // Posts Navigation Manager: open clicked post with its content
+    (function setupPostOpenHandlers() {
+        const articleLinks = document.querySelectorAll('.posts__container article .post__title a');
+        if (!articleLinks || articleLinks.length === 0) return;
+        
+        articleLinks.forEach(function(anchor) {
+            anchor.addEventListener('click', function(e) {
+                // Capture the article's content and navigate client-side
+                e.preventDefault();
+                const article = this.closest('article');
+                if (!article) return (window.location.href = this.href || 'Post.html');
+                
+                const data = {
+                    title: (article.querySelector('.post__title a')?.textContent || '').trim(),
+                    image: article.querySelector('.post__thumbnail img')?.getAttribute('src') || '',
+                    category: (article.querySelector('.post_button')?.textContent || '').trim(),
+                    body: (article.querySelector('.post__body')?.textContent || '').trim(),
+                    authorName: (article.querySelector('.post__author-info h5')?.textContent || '').trim(),
+                    authorAvatar: article.querySelector('.post__author-avatar img')?.getAttribute('src') || '',
+                    date: (article.querySelector('.post__author-info small')?.textContent || '').trim()
+                };
+                try {
+                    sessionStorage.setItem('currentPost', JSON.stringify(data));
+                } catch (_) {}
+                window.location.href = 'Post.html';
+            });
+        });
+    })();
+
+    // Post page renderer: read from sessionStorage and render
+    (function renderSinglePost() {
+        if (!/Post\.html$/i.test(window.location.pathname)) return;
+        let raw;
+        try {
+            raw = sessionStorage.getItem('currentPost');
+        } catch (_) { raw = null; }
+        if (!raw) return; // keep default content
+        let post;
+        try {
+            post = JSON.parse(raw);
+        } catch (_) { return; }
+        if (!post) return;
+        
+        const titleAnchor = document.querySelector('.singlepost__header h2 a');
+        if (titleAnchor && post.title) {
+            titleAnchor.textContent = post.title;
+        }
+        const heroImg = document.querySelector('.singlepost__thumbnail img');
+        if (heroImg && post.image) {
+            heroImg.setAttribute('src', post.image);
+        }
+        const authorName = document.querySelector('.post__author-info h5');
+        if (authorName && post.authorName) {
+            authorName.textContent = post.authorName;
+        }
+        const authorAvatar = document.querySelector('.post__author-avatar img');
+        if (authorAvatar && post.authorAvatar) {
+            authorAvatar.setAttribute('src', post.authorAvatar);
+        }
+        const dateEl = document.querySelector('.post__author-info small');
+        if (dateEl && post.date) {
+            dateEl.textContent = post.date;
+        }
+        const content = document.querySelector('.singlepost__content');
+        if (content && post.body) {
+            content.innerHTML = '';
+            const p = document.createElement('p');
+            p.className = 'post__body';
+            p.textContent = post.body;
+            content.appendChild(p);
+        }
+    })();
+    
     // Contact Form Manager
     const contactForm = document.querySelector('.contact__form');
     if (contactForm) {

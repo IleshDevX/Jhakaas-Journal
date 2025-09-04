@@ -1403,9 +1403,6 @@ form textarea::placeholder {
     margin-bottom: 3rem !important;
 }
 
-.sidebar__toggle {
-    display: none !important;
-}
 
 .dashboard__container{
     display: grid !important;
@@ -1531,6 +1528,31 @@ form textarea::placeholder {
 .dashboard main table td .btn {
     margin: 0.2rem 0.3rem !important;
     display: inline-block !important;
+}
+
+
+.sidebar_toggle {
+   display: none !important;
+}
+
+.dashboard aside {
+    transition: left 300ms ease !important;
+}
+
+.dashboard aside.show {
+    left: 0 !important;
+}
+
+@media screen and (max-width: 600px) {
+    .dashboard aside {
+        position: fixed !important;
+        left: -100% !important;
+        background: var(--color-gray-900) !important;
+        padding: 2rem !important;
+        height: 100vh !important;
+        width: 80% !important;
+        z-index: 999 !important;
+    }
 }
 
 /*==================================================================================================

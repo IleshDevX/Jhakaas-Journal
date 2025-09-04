@@ -268,6 +268,46 @@ nav button {
 }
 
 /*==============================================================================
+                              DASHBOARD SIDEBAR
+==============================================================================*/
+
+.sidebar_toggle {
+    position: fixed !important;
+    right: 0 !important;
+    top: 50% !important;
+    transform: translateY(-50%) !important;
+    background: var(--color-primary) !important;
+    color: var(--color-white) !important;
+    padding: 0.8rem !important;
+    border-radius: 0.5rem 0 0 0.5rem !important;
+    font-size: 1.2rem !important;
+    cursor: pointer !important;
+    z-index: 1000 !important;
+    transition: var(--transition) !important;
+    box-shadow: -2px 0 5px rgba(0, 0, 0, 0.2) !important;
+}
+
+.dashboard aside {
+    transition: left 300ms ease !important;
+}
+
+.dashboard aside.show {
+    left: 0 !important;
+}
+
+@media screen and (max-width: 600px) {
+    .dashboard aside {
+        position: fixed !important;
+        left: -100% !important;
+        background: var(--color-gray-900) !important;
+        padding: 2rem !important;
+        height: 100vh !important;
+        width: 80% !important;
+        z-index: 999 !important;
+    }
+}
+
+/*==============================================================================
                               CATEGORIES OF BUTTONS
 ==============================================================================*/
 

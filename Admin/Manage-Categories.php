@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jhakaas Journal The Blog Website</title>
     <!--CUSTOM STYLESHEET-->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./CSS/Style.css">
     <!--ICONSCOUT CDN-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <!--GOOGLE FONTS-->
@@ -16,20 +16,20 @@
 <body>
     <nav>
         <div class="container nav__container">
-             <a href="Index.html" class="nav__logo">Jhakaas Journal</a>
+             <a href="Index.php" class="nav__logo">Jhakaas Journal</a>
              <ul class="nav__items">
-                <li><a href="Blog.html" class="nav__link">Blog</a></li>
-                <li><a href="About.html" class="nav__link">About</a></li>
-                <li><a href="Services.html" class="nav__link">Services</a></li>
-                <li><a href="Contact.html" class="nav__link">Contact</a></li>
-                <!-- <li><a href="SignIn.html" class="nav__link">SignIn</a></li> -->
+                <li><a href="Blog.php" class="nav__link">Blog</a></li>
+                <li><a href="About.php" class="nav__link">About</a></li>
+                <li><a href="Services.php" class="nav__link">Services</a></li>
+                <li><a href="Contact.php" class="nav__link">Contact</a></li>
+                <!-- <li><a href="SignIn.php" class="nav__link">SignIn</a></li> -->
                 <li class="nav__profile">
                     <div class="avatar">
                         <img src="./images/avatar3.jpg" alt="avatar">
                     </div>
                     <ul>
-                        <li><a href="Dashboard.html">Dashboard</a></li>
-                        <li><a href="LogOut.html">LogOut</a></li> 
+                        <li><a href="Dashboard.php">Dashboard</a></li>
+                        <li><a href="LogOut.php">LogOut</a></li> 
                     </ul>
                 </li>
              </ul>
@@ -46,22 +46,22 @@
             <button id="hide_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-left"></i></button>  
             <aside>
                 <ul>
-                    <li><a href="Add-Post.html"><i class="uil uil-pen"></i>
+                    <li><a href="Add-Post.php"><i class="uil uil-pen"></i>
                         <h5>Add Posts</h5>
                     </a></li>
-                    <li><a href="Dashboard.html"><i class="uil uil-postcard"></i>
+                    <li><a href="Dashboard.php"><i class="uil uil-postcard"></i>
                         <h5>Manage Posts</h5>
                     </a></li>
-                    <li><a href="Add-User.html"><i class="uil uil-user-plus"></i>
+                    <li><a href="Add-User.php"><i class="uil uil-user-plus"></i>
                         <h5>Add User</h5>
                     </a></li>
-                    <li><a href="Manage-User.html"><i class="uil uil-users-alt"></i>
+                    <li><a href="Manage-User.php"><i class="uil uil-users-alt"></i>
                         <h5>Manage User</h5>
                     </a></li>
-                    <li><a href="Add-Category.html"><i class="uil uil-edit"></i>
+                    <li><a href="Add-Category.php"><i class="uil uil-edit"></i>
                         <h5>Add Category</h5>
                     </a></li>
-                    <li><a href="Manage-Categories.html" class="active"><i class="uil uil-clipboard-notes"></i>
+                    <li><a href="Manage-Categories.php" class="active"><i class="uil uil-clipboard-notes"></i>
                         <h5>Manage Categories</h5>
                     </a></li>
                 </ul>
@@ -79,33 +79,33 @@
                     <tbody>
                         <tr>
                             <td>Wild Life</td>
-                            <td><a href="Edit-Category.html" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.html" class="btn sm danger">Delete</a></td>
+                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
+                            <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
                         </tr>
                         <tr>
                             <td>Science & Technology</td>
-                            <td><a href="Edit-Category.html" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.html" class="btn sm danger">Delete</a></td>
+                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
+                            <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
                         </tr>
                         <tr>
                             <td>Art</td>
-                            <td><a href="Edit-Category.html" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.html" class="btn sm danger">Delete</a></td>
+                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
+                            <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
                         </tr>
                         <tr>
                             <td>Travel</td>
-                            <td><a href="Edit-Category.html" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.html" class="btn sm danger">Delete</a></td>
+                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
+                            <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
                         </tr>
                         <tr>
                             <td>Food</td>
-                            <td><a href="Edit-Category.html" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.html" class="btn sm danger">Delete</a></td>
+                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
+                            <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
                         </tr>
                         <tr>
                             <td>Music</td>
-                            <td><a href="Edit-Category.html" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.html" class="btn sm danger">Delete</a></td>
+                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
+                            <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
                         </tr>
                     </tbody>
                 </table>
@@ -171,7 +171,7 @@
 
     <!--=================================== END OF FOOTER  ===================================-->
 
-    <script src="./Main.js"></script>
+    <script src="./JS/Main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
 </body>

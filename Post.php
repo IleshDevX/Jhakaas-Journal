@@ -5,31 +5,32 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jhakaas Journal The Blog Website</title>
     <!--CUSTOM STYLESHEET-->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./CSS/Style.css">
     <!--ICONSCOUT CDN-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <!--GOOGLE FONTS-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!--BOOTSTRAP CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
 </head>
 <body>
     <nav>
         <div class="container nav__container">
-             <a href="Index.html" class="nav__logo">Jhakaas Journal</a>
+             <a href="Index.php" class="nav__logo">Jhakaas Journal</a>
              <ul class="nav__items">
-                <li><a href="Blog.html" class="nav__link">Blog</a></li>
-                <li><a href="About.html" class="nav__link">About</a></li>
-                <li><a href="Services.html" class="nav__link">Services</a></li>
-                <li><a href="Contact.html" class="nav__link">Contact</a></li>
-                <!-- <li><a href="SignIn.html" class="nav__link">SignIn</a></li> -->
+                <li><a href="Blog.php" class="nav__link">Blog</a></li>
+                <li><a href="About.php" class="nav__link">About</a></li>
+                <li><a href="Services.php" class="nav__link">Services</a></li>
+                <li><a href="Contact.php" class="nav__link">Contact</a></li>
+                <!-- <li><a href="SignIn.php" class="nav__link">SignIn</a></li> -->
                 <li class="nav__profile">
                     <div class="avatar">
                         <img src="./images/avatar3.jpg" alt="avatar">
                     </div>
                     <ul>
-                        <li><a href="Dashboard.html">Dashboard</a></li>
-                        <li><a href="LogOut.html">LogOut</a></li> 
+                        <li><a href="Dashboard.php">Dashboard</a></li>
+                        <li><a href="LogOut.php">LogOut</a></li> 
                     </ul>
                 </li>
              </ul>
@@ -40,68 +41,38 @@
 
     <!--=================================== END OF NAVIGATION ===================================-->
 
-    <section class="dashboard">
-        <div class="container dashboard__container">
-            <button id="show_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-right"></i></button>
-            <button id="hide_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-left"></i></button>  
-            <aside>
-                <ul>
-                    <li><a href="Add-Post.html"><i class="uil uil-pen"></i>
-                        <h5>Add Posts</h5>
-                    </a></li>
-                    <li><a href="Dashboard.html" class="active"><i class="uil uil-postcard"></i>
-                        <h5>Manage Posts</h5>
-                    </a></li>
-                    <li><a href="Add-User.html"><i class="uil uil-user-plus"></i>
-                        <h5>Add User</h5>
-                    </a></li>
-                    <li><a href="Manage-User.html"><i class="uil uil-users-alt"></i>
-                        <h5>Manage User</h5>
-                    </a></li>
-                    <li><a href="Add-Category.html"><i class="uil uil-edit"></i>
-                        <h5>Add Category</h5>
-                    </a></li>
-                    <li><a href="Manage-Categories.html"><i class="uil uil-clipboard-notes"></i>
-                        <h5>Manage Categories</h5>
-                    </a></li>
-                </ul>
-            </aside>
-            <main>
-                <h2>Manage Users</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Title</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Colorful Mural of an Elephant</td>
-                            <td><a href="Edit-User.html" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.html" class="btn sm danger">Delete</a></td>    
-                        </tr>
-                        <tr>
-                            <td>The Lines of Best Fit</td>
-                            <td><a href="Edit-User.html" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.html" class="btn sm danger">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <td>The Art League Blog</td>
-                            <td><a href="Edit-User.html" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.html" class="btn sm danger">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <td>Panther chameleons are rainbow-coloured lizards</td>
-                            <td><a href="Edit-User.html" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.html" class="btn sm danger">Delete</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </main>
+    <section class="singlepost">
+        <div class="container singlepost__container">
+            <div class="singlepost__header">
+                <h2><a href="Post.php">Panther chameleons are rainbow-coloured lizards</a></h2>
+                <div class="post__author">
+                    <div class="post__author-avatar">
+                        <img src="./Images/avatar2.jpg">
+                    </div>
+                    <div class="post__author-info">
+                        <h5>By: Tilak Prajapati</h5>
+                        <small>Feb 10, 2025 - 11:00 AM</small>
+                    </div>
+                </div>
+            </div>
+            <div class="singlepost__thumbnail">
+                <img src="./Images/blog3.jpg">
+            </div>
+            <div class="singlepost__content">
+                <p class="post__body"> The panther chameleon (Furcifer pardalis) is a brightly colored reptile first described in 1829 by French naturalist Georges Cuvier. Its scientific name is linked to its unique features: Furcifer comes from the Latin word for "forked," referring to the split toes used for gripping branches, while pardalis means "leopard," a nod to its spotted, panther‑like markings. Even the word "chameleon" has ancient roots, coming from Greek and Akkadian words meaning "ground lion," reflecting how people have long been fascinated by these unusual lizards.
+                </p>
+                <p>
+                Native to Madagascar, the panther chameleon is admired for its dazzling range of colors, especially in males that can display shades of red, green, blue, and orange. These colors are not just beautiful but serve important purposes such as helping regulate body temperature, attracting mates, or warning rivals. Different regions of Madagascar have their own distinct color varieties, which has made this chameleon one of the most prized reptiles in the pet trade.
+                </p>                
+                <p>
+                Although officially considered one species, research suggests that the panther chameleon might actually be a group of closely related species. Studies show that populations from different areas often don't interbreed easily, indicating they may be more distinct than once thought. This discovery is important for conservation, since habitat loss and over‑collection threaten the species. Protecting them and understanding their diversity will help safeguard Madagascar's unique ecosystems.
+                </p>
+            </div>
         </div>
     </section>
+
+    <!--=================================== END OF SINGLE POSTS  ===================================-->
+
 
     <footer>
         <div class="footer__socials">
@@ -159,9 +130,7 @@
         </div>
     </footer>
 
-    <!--=================================== END OF FOOTER  ===================================-->
-
-    <script src="./Main.js"></script>
+    <script src="./JS/Main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
 </body>

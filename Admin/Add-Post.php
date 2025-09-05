@@ -5,32 +5,31 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jhakaas Journal The Blog Website</title>
     <!--CUSTOM STYLESHEET-->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./CSS/Style.css">
     <!--ICONSCOUT CDN-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <!--GOOGLE FONTS-->
     <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
     <!--BOOTSTRAP CSS-->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
 </head>
 <body>
     <nav>
         <div class="container nav__container">
-             <a href="Index.html" class="nav__logo">Jhakaas Journal</a>
+             <a href="Index.php" class="nav__logo">Jhakaas Journal</a>
              <ul class="nav__items">
-                <li><a href="Blog.html" class="nav__link">Blog</a></li>
-                <li><a href="About.html" class="nav__link">About</a></li>
-                <li><a href="Services.html" class="nav__link">Services</a></li>
-                <li><a href="Contact.html" class="nav__link">Contact</a></li>
-
+                <li><a href="Blog.php" class="nav__link">Blog</a></li>
+                <li><a href="About.php" class="nav__link">About</a></li>
+                <li><a href="Services.php" class="nav__link">Services</a></li>
+                <li><a href="Contact.php" class="nav__link">Contact</a></li>
+                <!-- <li><a href="SignIn.php" class="nav__link">SignIn</a></li> -->
                 <li class="nav__profile">
                     <div class="avatar">
                         <img src="./images/avatar3.jpg" alt="avatar">
                     </div>
                     <ul>
-                        <li><a href="Dashboard.html">Dashboard</a></li>
-                        <li><a href="LogOut.html">LogOut</a></li> 
+                        <li><a href="Dashboard.php">Dashboard</a></li>
+                        <li><a href="LogOut.php">LogOut</a></li> 
                     </ul>
                 </li>
              </ul>
@@ -39,27 +38,35 @@
         </div>
     </nav>
 
-    <!--=================================== END OF NAVIGATION ===================================-->
+// ... existing code ...
 
-    <section class="about">
-        <div class="container about__container">
-            <div class="about__intro">
-                <h1>About Jhakaas Journal</h1>
-                <p></p>We are your go-to destination for discovering fresh ideas, diverse perspectives, and engaging stories from across the globe. Our blog is designed for curious minds who love to explore, learn, and stay inspired.<br>At Jhakaas Journal, we believe knowledge and creativity should be accessible to everyone. That’s why we cover a wide range of topics that spark curiosity and conversation. From the wonders of wildlife and the fascinating discoveries in science & technology, to the limitless expressions of art, we aim to celebrate every aspect of human creativity and innovation.For the adventurous soul, our travel stories open doors to breathtaking destinations, unique cultures, and unforgettable experiences. For food lovers, we bring you explorations of flavors, recipes, and culinary traditions that connect people across the world. And for music enthusiasts, our features dive into rhythms, genres, and artists that inspire generations.<br>What sets Jhakaas Journal apart is our dedication to creating content that is not only insightful and informative, but also entertaining and inspiring. We focus on delivering high-quality articles that readers can trust, enjoy, and share. Every post is crafted with care to bring value to your time and attention.Our mission is simple: to inform, to entertain, and to inspire. Whether you’re here to learn something new, find travel inspiration, enjoy food culture, or simply explore creative ideas, Jhakaas Journal is here to be your companion on that journey.</p>
-            </div>
-
-            <div class="about__mission">
-                <h2>Our Mission</h2>
-                <p>At Jhakaas Journal, our mission is simple yet powerful to create a platform where knowledge meets inspiration. We believe that stories, ideas, and discoveries have the potential to spark change, fuel curiosity, and bring people closer to their passions.<br>Through our carefully crafted content, we aim to provide readers with more than just information. Each article is designed to engage the mind, ignite creativity, and encourage exploration. Whether it’s learning about the marvels of wildlife, understanding breakthroughs in science and technology, experiencing the beauty of art, or discovering new cultures through travel, food, and music — we strive to offer something meaningful for everyone.<br>At Jhakaas Journal, we want our readers to not only gain knowledge, but also feel inspired to broaden their horizons and make a positive difference in the world.</p>
-            </div>
-
-            <div class="about__cta">
-                <a href="Contact.html">Contact Us</a>
-            </div>
+    <section class="form__section">
+        <div class="container form__section-container">
+            <h2>Add Post</h2>
+            <form action="" enctype="multipart/form-data">
+                <input type="text" placeholder="Title">
+                <select>
+                    <option value="1">Wild life</option>
+                    <option value="2">Science & Technology</option>
+                    <option value="3">Art</option>
+                    <option value="4">Travel</option>
+                    <option value="5">Food</option>
+                    <option value="6">Music</option>
+                </select>
+                <textarea rows="15" placeholder="Body"></textarea>
+                <div class="form__control inline">
+                    <input type="checkbox" id="is_featured">
+                    <label for="is_featured">Featured</label>
+                </div>
+                <div class="form__control">
+                    <label for="thumbnail">Add Thumbnail</label>
+                    <input type="file" id="thumbnail">
+                </div>
+                <button type="submit" class="btn">Add Post</button>
+            </form>
         </div>
     </section>
 
-    <!--=======================================  FOOTER  =======================================-->
     <footer>
         <div class="footer__socials">
             <a href="https://www.youtube.com/@ileshpatel666" target="_blank"><i class="uil uil-youtube"></i></a>
@@ -118,9 +125,8 @@
 
     <!--=================================== END OF FOOTER  ===================================-->
 
-    <script src="./Main.js"></script>
+    <script src="./JS/Main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
 </body>
 </html>
-

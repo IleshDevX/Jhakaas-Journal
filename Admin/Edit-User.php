@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jhakaas Journal The Blog Website</title>
     <!--CUSTOM STYLESHEET-->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./CSS/Style.css">    ">
     <!--ICONSCOUT CDN-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <!--GOOGLE FONTS-->
@@ -16,20 +16,20 @@
 <body>
     <nav>
         <div class="container nav__container">
-             <a href="Index.html" class="nav__logo">Jhakaas Journal</a>
+             <a href="Index.php" class="nav__logo">Jhakaas Journal</a>
              <ul class="nav__items">
-                <li><a href="Blog.html" class="nav__link">Blog</a></li>
-                <li><a href="About.html" class="nav__link">About</a></li>
-                <li><a href="Services.html" class="nav__link">Services</a></li>
-                <li><a href="Contact.html" class="nav__link">Contact</a></li>
-                <!-- <li><a href="SignIn.html" class="nav__link">SignIn</a></li> -->
+                <li><a href="Blog.php" class="nav__link">Blog</a></li>
+                <li><a href="About.php" class="nav__link">About</a></li>
+                <li><a href="Services.php" class="nav__link">Services</a></li>
+                <li><a href="Contact.php" class="nav__link">Contact</a></li>
+                <!-- <li><a href="SignIn.php" class="nav__link">SignIn</a></li> -->
                 <li class="nav__profile">
                     <div class="avatar">
                         <img src="./images/avatar3.jpg" alt="avatar">
                     </div>
                     <ul>
-                        <li><a href="Dashboard.html">Dashboard</a></li>
-                        <li><a href="LogOut.html">LogOut</a></li> 
+                        <li><a href="Dashboard.php">Dashboard</a></li>
+                        <li><a href="LogOut.php">LogOut</a></li> 
                     </ul>
                 </li>
              </ul>
@@ -40,23 +40,15 @@
     
     <section class="form__section">
         <div class="container form__section-container">
-            <h2>Add User</h2>
+            <h2>Edit User</h2>
             <form action="" enctype="multipart/form-data">
-            <input type="text" placeholder="First Name">
-            <input type="text" placeholder="Last Name">
-            <input type="text" placeholder="Username">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Create Password">
-            <input type="password" placeholder="Confirm Password">
+                <input type="text" placeholder="First Name">
+                <input type="text" placeholder="Last Name">
             <select>
                 <option value="0">Author</option>
                 <option value="1">Admin</option>
             </select>
-            <div class="form__control">
-                <label for="avatar">User Avatar</label>
-                <input type="file" id="avatar">
-            </div>
-            <button type="submit" class="btn">Add User</button>
+            <button type="submit" class="btn">Update User</button>
         </form>
         </div>
     </section>
@@ -119,7 +111,7 @@
 
     <!--=================================== END OF FOOTER  ===================================-->
 
-    <script src="./Main.js"></script>
+    <script src="./JS/Main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
 </body>

@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jhakaas Journal The Blog Website</title>
     <!--CUSTOM STYLESHEET-->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./CSS/Style.css">
     <!--ICONSCOUT CDN-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <!--GOOGLE FONTS-->
@@ -17,30 +17,22 @@
 <body>
 <section class="form__section">
     <div class="container form__section-container">
-        <h2>Sign Up</h2>
-        <div class="alert__message error">
+        <h2>Sign In</h2>
+        <div class="alert__message success">
             <p>
-                Please fill in all required fields.
+                You have successfully signed in !!
             </p>
         </div>
-        <form action="" enctype="multipart/form-data">
-            <input type="text" placeholder="First Name">
-            <input type="text" placeholder="Last Name">
-            <input type="text" placeholder="Username">
-            <input type="email" placeholder="Email">
-            <input type="password" placeholder="Create Password">
-            <input type="password" placeholder="Confirm Password">
-            <div class="form__control">
-                <label for="avatar">User Avatar</label>
-                <input type="file" id="avatar">
-            </div>
-            <button type="submit" class="btn">Sign Up</button>
-            <small>Already have an account? <a href="SignIn.html">Sign In</a></small>
+        <form action="">
+            <input type="text" placeholder="Username or Email">
+            <input type="password" placeholder="Password">
+            <button type="submit" class="btn">Sign In</button>
+            <small>Don't have an account? <a href="SignUp.php">Sign Up</a></small>
         </form>
     </div>
 </section>
 
-    <script src="./Main.js"></script>
+    <script src="./JS/Main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

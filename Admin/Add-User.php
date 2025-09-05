@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jhakaas Journal The Blog Website</title>
     <!--CUSTOM STYLESHEET-->
-    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./CSS/Style.css">
     <!--ICONSCOUT CDN-->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.8/css/line.css">
     <!--GOOGLE FONTS-->
@@ -16,20 +16,20 @@
 <body>
     <nav>
         <div class="container nav__container">
-             <a href="Index.html" class="nav__logo">Jhakaas Journal</a>
+             <a href="Index.php" class="nav__logo">Jhakaas Journal</a>
              <ul class="nav__items">
-                <li><a href="Blog.html" class="nav__link">Blog</a></li>
-                <li><a href="About.html" class="nav__link">About</a></li>
-                <li><a href="Services.html" class="nav__link">Services</a></li>
-                <li><a href="Contact.html" class="nav__link">Contact</a></li>
-                <!-- <li><a href="SignIn.html" class="nav__link">SignIn</a></li> -->
+                <li><a href="Blog.php" class="nav__link">Blog</a></li>
+                <li><a href="About.php" class="nav__link">About</a></li>
+                <li><a href="Services.php" class="nav__link">Services</a></li>
+                <li><a href="Contact.php" class="nav__link">Contact</a></li>
+                <!-- <li><a href="SignIn.php" class="nav__link">SignIn</a></li> -->
                 <li class="nav__profile">
                     <div class="avatar">
                         <img src="./images/avatar3.jpg" alt="avatar">
                     </div>
                     <ul>
-                        <li><a href="Dashboard.html">Dashboard</a></li>
-                        <li><a href="LogOut.html">LogOut</a></li> 
+                        <li><a href="Dashboard.php">Dashboard</a></li>
+                        <li><a href="LogOut.php">LogOut</a></li> 
                     </ul>
                 </li>
              </ul>
@@ -37,69 +37,27 @@
              <button id="close__nav-btn"><i class="uil uil-multiply"></i></button>
         </div>
     </nav>
-
-    <!--=================================== END OF NAVIGATION ===================================-->
-
-    <section class="dashboard">
-        <div class="container dashboard__container">
-            <button id="show_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-right"></i></button>
-            <button id="hide_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-left"></i></button>  
-            <aside>
-                <ul>
-                    <li><a href="Add-Post.html"><i class="uil uil-pen"></i>
-                        <h5>Add Posts</h5>
-                    </a></li>
-                    <li><a href="Dashboard.html"><i class="uil uil-postcard"></i>
-                        <h5>Manage Posts</h5>
-                    </a></li>
-                    <li><a href="Add-User.html"><i class="uil uil-user-plus"></i>
-                        <h5>Add User</h5>
-                    </a></li>
-                    <li><a href="Manage-User.html" class="active"   ><i class="uil uil-users-alt"></i>
-                        <h5>Manage User</h5>
-                    </a></li>
-                    <li><a href="Add-Category.html"><i class="uil uil-edit"></i>
-                        <h5>Add Category</h5>
-                    </a></li>
-                    <li><a href="Manage-Categories.html"><i class="uil uil-clipboard-notes"></i>
-                        <h5>Manage Categories</h5>
-                    </a></li>
-                </ul>
-            </aside>
-            <main>
-                <h2>Manage Users</h2>
-                <table>
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Edit</th>
-                            <th>Delete</th>
-                        </tr>
-                    </thead>
-                    <tbody>
-                        <tr>
-                            <td>Tilak Prajapati</td>
-                            <td><a href="Edit-User.html" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.html" class="btn sm danger">Delete</a></td>    
-                        </tr>
-                        <tr>
-                            <td>Dhavani Soni</td>
-                            <td><a href="Edit-User.html" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.html" class="btn sm danger">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <td>Aadhya Kapoor</td>
-                            <td><a href="Edit-User.html" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.html" class="btn sm danger">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <td>Aarav Chauhan</td>
-                            <td><a href="Edit-User.html" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.html" class="btn sm danger">Delete</a></td>
-                        </tr>
-                    </tbody>
-                </table>
-            </main>
+    
+    <section class="form__section">
+        <div class="container form__section-container">
+            <h2>Add User</h2>
+            <form action="" enctype="multipart/form-data">
+            <input type="text" placeholder="First Name">
+            <input type="text" placeholder="Last Name">
+            <input type="text" placeholder="Username">
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Create Password">
+            <input type="password" placeholder="Confirm Password">
+            <select>
+                <option value="0">Author</option>
+                <option value="1">Admin</option>
+            </select>
+            <div class="form__control">
+                <label for="avatar">User Avatar</label>
+                <input type="file" id="avatar">
+            </div>
+            <button type="submit" class="btn">Add User</button>
+        </form>
         </div>
     </section>
 
@@ -161,7 +119,7 @@
 
     <!--=================================== END OF FOOTER  ===================================-->
 
-    <script src="./Main.js"></script>
+    <script src="./JS/Main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
     
 </body>

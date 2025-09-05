@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jhakaas Journal</title>
     <!-- CUSTOMIZE CSS -->
-    <link rel="stylesheet" href="./Style.css">
+    <link rel="stylesheet" href="./CSS/Style.css">
     <!-- ICONSCOUT CDN -->
     <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
     <!-- GOOGLE FONTS (MONTSERRAT) -->
@@ -18,19 +18,19 @@
 <body>
     <nav>
         <div class="container nav__container">
-            <a href="Index.html" class="nav__logo">Jhakaas Journal</a>
+            <a href="Index.php" class="nav__logo">Jhakaas Journal</a>
             <ul class="nav__items">
-                <li><a href="Blog.html">Blog</a></li>
-                <li><a href="About.html">About</a></li>
-                <li><a href="Services.html">Services</a></li>
-                <li><a href="Contact.html">Contact</a></li>
+                <li><a href="Blog.php">Blog</a></li>
+                <li><a href="About.php">About</a></li>
+                <li><a href="Services.php">Services</a></li>
+                <li><a href="Contact.php">Contact</a></li>
                 <li class="nav__profile">
                     <div class="avatar">
                         <img src="./images/avatar3.jpg" alt="avatar">
                     </div>
                     <ul>
-                        <li><a href="Dashboard.html">Dashboard</a></li>
-                        <li><a href="LogOut.html">LogOut</a></li> 
+                        <li><a href="Dashboard.php">Dashboard</a></li>
+                        <li><a href="LogOut.php">LogOut</a></li> 
                     </ul>
                 </li>
             </ul>
@@ -139,7 +139,7 @@
     </footer>
 
 
-    <script src="./Main.js"></script>
+    <script src="./JS/Main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 
 </body>

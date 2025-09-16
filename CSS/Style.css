@@ -1616,7 +1616,18 @@ form textarea::placeholder {
 
     nav button#close__nav-btn {
         display: none !important;
-        visibility: hidden !important;
+    }
+
+    nav button#open__nav-btn {
+        display: inline-block !important;
+        z-index: 1002 !important;
+    }
+
+    /* Ensure proper button positioning */
+    nav button#open__nav-btn,
+    nav button#close__nav-btn {
+        position: relative !important;
+        z-index: 1001 !important;
     }
 
     .nav__items {

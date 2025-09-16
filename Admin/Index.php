@@ -13,7 +13,7 @@ include 'Partials/Header.php';
                     <li><a href="Add-Post.php"><i class="uil uil-pen"></i>
                         <h5>Add Posts</h5>
                     </a></li>
-                    <li><a href="Index.php"><i class="uil uil-postcard"></i>
+                    <li><a href="Index.php" class="active"><i class="uil uil-postcard"></i>
                         <h5>Manage Posts</h5>
                     </a></li>
                     <li><a href="Add-User.php"><i class="uil uil-user-plus"></i>
@@ -25,13 +25,13 @@ include 'Partials/Header.php';
                     <li><a href="Add-Category.php"><i class="uil uil-edit"></i>
                         <h5>Add Category</h5>
                     </a></li>
-                    <li><a href="Manage-Categories.php" class="active"><i class="uil uil-clipboard-notes"></i>
+                    <li><a href="Manage-Categories.php"><i class="uil uil-clipboard-notes"></i>
                         <h5>Manage Categories</h5>
                     </a></li>
                 </ul>
             </aside>
             <main>
-                <h2>Manage Categories</h2>
+                <h2>Manage Users</h2>
                 <table>
                     <thead>
                         <tr>
@@ -42,33 +42,23 @@ include 'Partials/Header.php';
                     </thead>
                     <tbody>
                         <tr>
-                            <td>Wild Life</td>
-                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
+                            <td>Colorful Mural of an Elephant</td>
+                            <td><a href="Edit-User.php" class="btn sm">Edit</a></td>
+                            <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>    
+                        </tr>
+                        <tr>
+                            <td>The Lines of Best Fit</td>
+                            <td><a href="Edit-User.php" class="btn sm">Edit</a></td>
                             <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
                         </tr>
                         <tr>
-                            <td>Science & Technology</td>
-                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
+                            <td>The Art League Blog</td>
+                            <td><a href="Edit-User.php" class="btn sm">Edit</a></td>
                             <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
                         </tr>
                         <tr>
-                            <td>Art</td>
-                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <td>Travel</td>
-                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <td>Food</td>
-                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <td>Music</td>
-                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
+                            <td>Panther chameleons are rainbow-coloured lizards</td>
+                            <td><a href="Edit-User.php" class="btn sm">Edit</a></td>
                             <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
                         </tr>
                     </tbody>
@@ -77,6 +67,6 @@ include 'Partials/Header.php';
         </div>
     </section>
 
-<?php
-include '../Partials/Footer.php';
-?>
+   <?php
+    include '../Partials/Footer.php';
+    ?>

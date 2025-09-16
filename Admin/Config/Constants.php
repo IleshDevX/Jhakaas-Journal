@@ -1,2 +1,4 @@
 <?php
-define('ROOT_URL', 'http://localhost/Jhakaas-Journal/');
+if (!defined('ROOT_URL')) {
+    define('ROOT_URL', 'http://localhost/Jhakaas-Journal/');
+}

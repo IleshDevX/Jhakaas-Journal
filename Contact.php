@@ -1,43 +1,6 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jhakaas Journal</title>
-    <!-- CUSTOMIZE CSS -->
-    <link rel="stylesheet" href="./CSS/Style.css">
-    <!-- ICONSCOUT CDN -->
-    <link rel="stylesheet" href="https://unicons.iconscout.com/release/v4.0.0/css/line.css">
-    <!-- GOOGLE FONTS (MONTSERRAT) -->
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
-    <!--BOOTSTRAP CSS-->
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-
-</head>
-<body>
-    <nav>
-        <div class="container nav__container">
-            <a href="Index.php" class="nav__logo">Jhakaas Journal</a>
-            <ul class="nav__items">
-                <li><a href="Blog.php">Blog</a></li>
-                <li><a href="About.php">About</a></li>
-                <li><a href="Services.php">Services</a></li>
-                <li><a href="Contact.php">Contact</a></li>
-                <li class="nav__profile">
-                    <div class="avatar">
-                        <img src="./images/avatar3.jpg" alt="avatar">
-                    </div>
-                    <ul>
-                        <li><a href="Dashboard.php">Dashboard</a></li>
-                        <li><a href="LogOut.php">LogOut</a></li> 
-                    </ul>
-                </li>
-            </ul>
-            <button id="open__nav-btn"><i class="uil uil-bars"></i></button>
-            <button id="close__nav-btn"><i class="uil uil-multiply"></i></button>
-        </div>
-    </nav>
+<?php
+include 'Partials/Header.php';
+?>
     <!-- ======================== END OF NAV ======================== -->
 
     <section class="contact">
@@ -86,61 +49,6 @@
 
     <!--=======================================  FOOTER  =======================================-->
 
-    <footer>
-        <div class="container footer__container">
-            <article>
-                <h4>Categories</h4>
-                <ul>
-                    <li><a href="#">Art</a></li>
-                    <li><a href="#">Wild Life</a></li>
-                    <li><a href="#">Travel</a></li>
-                    <li><a href="#">Science & Technology</a></li>
-                    <li><a href="#">Food</a></li>
-                    <li><a href="#">Music</a></li>
-                </ul>
-            </article>
-
-            <article>
-                <h4>Support</h4>
-                <ul>
-                    <li><a href="#">Online Support</a></li>
-                    <li><a href="#">Call Numbers</a></li>
-                    <li><a href="#">Emails</a></li>
-                    <li><a href="#">Social Media</a></li>
-                    <li><a href="#">Location</a></li>
-                </ul>
-            </article>
-
-            <article>
-                <h4>Blog</h4>
-                <ul>
-                    <li><a href="#">Safety</a></li>
-                    <li><a href="#">Repair</a></li>
-                    <li><a href="#">Recent</a></li>
-                    <li><a href="#">Popular</a></li>
-                    <li><a href="#">Categories</a></li>
-                </ul>
-            </article>
-
-            <article>
-                <h4>Permalinks</h4>
-                <ul>
-                    <li><a href="#">Home</a></li>
-                    <li><a href="#">Blog</a></li>
-                    <li><a href="#">About</a></li>
-                    <li><a href="#">Services</a></li>
-                    <li><a href="#">Contact</a></li>
-                </ul>
-            </article>
-        </div>
-        <div class="footer__copyright">
-            <small>Copyright &copy; 2023 Jhakaas Journal</small>
-        </div>
-    </footer>
-
-
-    <script src="./JS/Main.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
-
-</body>
-</html>
+<?php
+include 'Partials/Footer.php';
+?>

@@ -20,61 +20,68 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Get navigation elements
     const navItems = document.querySelector('.nav__items');
-    const openBtn = document.querySelector('#open__nav-btn');
-    const closeBtn = document.querySelector('#close__nav-btn');
-    const navLinks = document.querySelectorAll('.nav__link');
+    const toggleBtn = document.querySelector('#open__nav-btn'); // Use as toggle button
+    const navLinks = document.querySelectorAll('.nav__items a'); // Select all links within nav items
     
     console.log('Nav elements found:', {
         navItems: !!navItems,
-        openBtn: !!openBtn, 
-        closeBtn: !!closeBtn,
-        navLinks: navLinks.length
+        toggleBtn: !!toggleBtn,
+        navLinks: navLinks.length,
+        windowWidth: window.innerWidth
     });
     
-    if (!navItems || !openBtn || !closeBtn) {
+    if (!navItems || !toggleBtn) {
         console.log('Missing navigation elements!');
+        console.log('navItems:', navItems);
+        console.log('toggleBtn:', toggleBtn);
         return;
     }
     
-    // Function to open navigation
-    function openNavigation() {
-        console.log('Opening nav...');
-        navItems.classList.add('show');
-        openBtn.style.display = 'none';
-        closeBtn.style.display = 'inline-block';
-        document.body.classList.add('nav-open'); // Add body class for CSS targeting
+    // Function to toggle navigation
+    function toggleNavigation() {
+        const isOpen = navItems.classList.contains('show');
+        
+        if (isOpen) {
+            console.log('Closing nav...');
+            navItems.classList.remove('show');
+            document.body.classList.remove('nav-open');
+        } else {
+            console.log('Opening nav...');
+            navItems.classList.add('show');
+            document.body.classList.add('nav-open');
+        }
     }
     
-    // Function to close navigation
+    // Function to close navigation (used by other events)
     function closeNavigation() {
         console.log('Closing nav...');
         navItems.classList.remove('show');
-        openBtn.style.display = 'inline-block';
-        closeBtn.style.display = 'none';
         document.body.classList.remove('nav-open');
     }
     
-    // Open button click
-    openBtn.addEventListener('click', function(e) {
+    // Toggle button click
+    toggleBtn.addEventListener('click', function(e) {
         e.preventDefault();
         e.stopPropagation();
-        console.log('Open button clicked');
-        openNavigation();
+        console.log('Toggle button clicked');
+        toggleNavigation();
     });
-    
-    // Close button click
-    closeBtn.addEventListener('click', function(e) {
+
+    // Add touch support for mobile
+    toggleBtn.addEventListener('touchstart', function(e) {
         e.preventDefault();
-        e.stopPropagation();
-        console.log('Close button clicked');
-        closeNavigation();
+        console.log('Toggle button touched');
+        toggleNavigation();
     });
     
     // Close when clicking nav links
     navLinks.forEach(function(link, index) {
-        link.addEventListener('click', function() {
+        link.addEventListener('click', function(e) {
             console.log('Nav link ' + index + ' clicked');
-            closeNavigation();
+            // Add a small delay to allow navigation to process
+            setTimeout(function() {
+                closeNavigation();
+            }, 100);
         });
     });
     
@@ -85,8 +92,7 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Check if click is outside navigation
         if (!navItems.contains(e.target) && 
-            !openBtn.contains(e.target) && 
-            !closeBtn.contains(e.target)) {
+            !toggleBtn.contains(e.target)) {
             console.log('Clicked outside - closing nav');
             closeNavigation();
         }
@@ -102,7 +108,7 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Close on window resize (desktop)
     window.addEventListener('resize', function() {
-        if (window.innerWidth > 1024 && navItems.classList.contains('show')) {
+        if (window.innerWidth > 1080 && navItems.classList.contains('show')) {
             console.log('Resized to desktop - closing nav');
             closeNavigation();
         }
@@ -110,7 +116,10 @@ document.addEventListener('DOMContentLoaded', function() {
     
     // Force close function for debugging
     window.forceCloseNav = closeNavigation;
-    window.forceOpenNav = openNavigation;
+    window.forceToggleNav = toggleNavigation;
+    
+    // Ensure navigation is closed on page load
+    closeNavigation();
     
     // Initialize other managers
     initializeOtherManagers();

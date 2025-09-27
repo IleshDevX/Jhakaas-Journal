@@ -21,7 +21,7 @@ include 'Partials/Header.php';
                 <div class="post__info">
                     <a href="" class="post_button">Wild Life</a>
                     <h3 class="post__title">
-                        <a href="Post.php">The rainbow lorikeet (Trichoglossus moluccanus) is a species of parrot found in Australia.</a>
+                        <a href="Post.php?id=1">The rainbow lorikeet (Trichoglossus moluccanus) is a species of parrot found in Australia.</a>
                     </h3>
                     <p class="post__body">
                         The rainbow lorikeet is a medium-sized parrot, with the length ranging from 25 to 30 cm (9.8 to 11.8 in) including the tail, and the weight varies from 75 to 157 g (2.6–5.5 oz). The plumage of the nominate race, as with all subspecies, is very bright and colorful. The head is deep blue with a greenish-yellow nuchal collar, and the rest of the upper parts (wings, back and tail) are green. The chest is orange/yellow. The belly is deep blue, and the thighs and rump are green. In flight a yellow wing-bar contrasts clearly with the red underwing coverts. There is little to visually distinguish between the sexes.
@@ -47,7 +47,7 @@ include 'Partials/Header.php';
                 <div class="post__info">
                     <a href="" class="post_button">Art</a>
                     <h3 class="post__title">
-                        <a href="Post.php">Colorful Mural of an Elephant</a>
+                        <a href="Post.php?id=2">Colorful Mural of an Elephant</a>
                     </h3>
                     <p class="post__body">
                         This mural of an elephant is a vibrant and colorful representation of the majestic animal. The artist has used a variety of bright colors to create a stunning visual impact, capturing the essence of the elephant's strength and grace. The intricate details in the mural highlight the texture of the elephant's skin and the beauty of its features, making it a captivating piece of art that draws viewers in.   
@@ -73,7 +73,7 @@ include 'Partials/Header.php';
                 <div class="post__info">
                     <a href="" class="post_button">Science & Technology</a>
                     <h3 class="post__title">
-                        <a href="Post.php">Driving AI-Powered Robotics Development with NVIDIA Isaac for Healthcare</a>
+                        <a href="Post.php?id=3">Driving AI-Powered Robotics Development with NVIDIA Isaac for Healthcare</a>
                     </h3>
                     <p class="post__body">
                         This article explores the advancements in AI-powered robotics, specifically focusing on the NVIDIA Isaac platform and its applications in healthcare. The integration of AI and robotics has the potential to revolutionize patient care, streamline workflows, and enhance the capabilities of medical professionals. By leveraging cutting-edge technologies, healthcare providers can improve diagnostic accuracy, optimize treatment plans, and ultimately deliver better patient outcomes.
@@ -99,7 +99,7 @@ include 'Partials/Header.php';
                 <div class="post__info">
                     <a href="" class="post_button">Science & Technology</a>
                     <h3 class="post__title">
-                        <a href="Post.php">What Does Andreessen Horowitz’s Metamorphosis Say About the Future of Equities?</a>
+                        <a href="Post.php?id=4">What Does Andreessen Horowitz’s Metamorphosis Say About the Future of Equities?</a>
                     </h3>
                     <p class="post__body">
                        Andreessen Horowitz (also known as “a16z”), one of the most prestigious names in venture capital and notably the first VC firm to raise a significant cryptocurrency fund, recently announced that it will be relinquishing its status as a venture capital firm and, instead, restructuring as a registered investment advisor (RIA). <br> While the transition will undoubtedly have significant economic and compliance implications for Andreessen Horowitz, the move will allow the firm to allocate much more of its capital into areas like cryptocurrencies as well as give it greater flexibility to leverage its capital.
@@ -125,7 +125,7 @@ include 'Partials/Header.php';
                 <div class="post__info">
                     <a href="" class="post_button">Food</a>
                     <h3 class="post__title">
-                        <a href="Post.php">African Journal of Food, Agriculture, Nutrition and Development </a>
+                        <a href="Post.php?id=5">African Journal of Food, Agriculture, Nutrition and Development </a>
                     </h3>
                     <p class="post__body">
                         The African Journal of Food, Agriculture, Nutrition and Development (AJFAND) is a multidisciplinary journal that publishes original research articles, reviews, and case studies in the fields of food, agriculture, nutrition, and development. The journal aims to promote the exchange of knowledge and ideas among researchers, practitioners, and policymakers in Africa and beyond. <br> The African Journal of Food, Agriculture, Nutrition and Development is a quarterly peer-reviewed journal based in Kenya. <br> The journal was originally started in 2001 by Ruth Oniang’o, an expert in nutrition policy and renewed advocate for women’s health. The journal is one of the first continuously published agriculture-related publications in Africa and offers information on region-specific issues, such as providing water-efficient maize to smallholder farms in Western Kenya and combating aflatoxins in Eastern Africa
@@ -151,7 +151,7 @@ include 'Partials/Header.php';
                 <div class="post__info">
                     <a href="" class="post_button">Travel</a>
                     <h3 class="post__title">
-                        <a href="Post.php">Unveiling Paradise: Top Unique Experiences You Can Only Have in the Gulf of Thailand</a>
+                        <a href="Post.php?id=6">Unveiling Paradise: Top Unique Experiences You Can Only Have in the Gulf of Thailand</a>
                     </h3>
                     <p class="post__body">
                         After not cycling for four weeks and one blog, we are back on the pedals! This blog describes our trip from Bangkok to Krabi. With the exception of the last two days, we follow the coast of the Gulf of Thailand. The first day we cycle through the Bangkok metropolitan region, the next one or two days through salt fields and after that several days through coconut, palm oil and rubber plantations. The route is fantastic and we are – after having a wonderful time with the children – very happy that we are back in the flow of cycling: eat, sleep, ride … the world wide!
@@ -177,7 +177,7 @@ include 'Partials/Header.php';
                 <div class="post__info">
                     <a href="" class="post_button">Wild Life</a>
                     <h3 class="post__title">
-                        <a href="Post.php">Green Violetear Taxonomy Change: Meet the Mexican and Lesser Violetear</a>
+                        <a href="Post.php?id=7">Green Violetear Taxonomy Change: Meet the Mexican and Lesser Violetear</a>
                     </h3>
                     <p class="post__body">
                        In 2016, scientists made an important update to hummingbird taxonomy by splitting the Green Violetear into two species: the Mexican Violetear (Colibri thalassinus) and the Lesser Violetear (Colibri cyanotus). This decision was based on new genetic and morphological research, helping us better appreciate the diversity within these stunning birds. The Mexican Violetear, found primarily in Mexico and parts of Central America, stands out with its medium size and shimmering green plumage, highlighted by a vivid violet patch on the sides of its neck. 
@@ -203,7 +203,7 @@ include 'Partials/Header.php';
                 <div class="post__info">
                     <a href="" class="post_button">Music</a>
                     <h3 class="post__title">
-                        <a href="Post.php">The Lines of Best Fit</a>
+                        <a href="Post.php?id=8">The Lines of Best Fit</a>
                     </h3>
                     <p class="post__body">
                         Just like Spin, The Lines of Best Fit, too, concentrates on new music. Established in 2007 in London, it’s an independent online music magazine publishing music reviews, interviews, and features, promoting itself as pro-emotion, pro-passion, pro-care, and anti-nonchalant. Particularly its reviews are of high relevance as they are often used for review aggregate sites such as Metacritic or AnyDecentMusic?.<br>Besides what’s mentioned above, the magazine also publishes new, music premieres, live performances, curated playlists, and podcasts. Last but not least, its name is derived from a song on the You Can Play These Songs with Chords demo by Death Cub For Cutie
@@ -229,7 +229,7 @@ include 'Partials/Header.php';
                 <div class="post__info">
                     <a href="" class="post_button">Art</a>
                     <h3 class="post__title">
-                        <a href="Post.php">The Art League Blog</a>
+                        <a href="Post.php?id=9">The Art League Blog</a>
                     </h3>
                     <p class="post__body">
                         The Art League Blog is one of the largest and the best art blogs in the United States of America. It is based in the city of Alexandria and offers opportunities for artists to exhibit their works in art exhibitions and events. <br>It is majorly a visual arts organization that serves artists in the DC area and beyond. The blogging website posts news and information for art students, enthusiasts, budding artists, as well as event-goers.<br>The blog has categories like art classes, exhibits, artful resources, opportunities, events, and other resources. The Art League as an organization is more than 60 years old and has a huge collection of artworks and archives. Learn more about the Art League and how they have shaped up as one of the largest art blogs in the country.
@@ -255,7 +255,7 @@ include 'Partials/Header.php';
                 <div class="post__info">
                     <a href="" class="post_button">Science & Technology</a>
                     <h3 class="post__title">
-                        <a href="Post.php">SLM vs LLM: Choosing the Right AI Model for Your Business</a>
+                        <a href="Post.php?id=10">SLM vs LLM: Choosing the Right AI Model for Your Business</a>
                     </h3>
                     <p class="post__body">
                         Before you begin, it’s important to consider: Should it be a powerful model capable of handling large volumes of data, a smaller and more compact version, or one optimized for speed and specific tasks? <br>This is where the comparison between Small Language Models (SLMs) and Large Language Models (LLMs) becomes relevant.<br>Language models, such as those used in chatbots form the foundation of many AI systems. LLMs like GPT-4 offer broad capabilities and deep learning potential, while SLMs emphasize speed and efficiency with fewer resource demands. <br>In this blog, we’ll look at how SLMs and LLMs differ, the benefits and trade-offs of each, and where they are best applied. Whether you’re exploring a custom LLM or an SLM, understanding their core features will help you choose the right solution. Let’s begin by defining each model.

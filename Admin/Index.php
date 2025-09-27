@@ -16,11 +16,14 @@ include 'Partials/Header.php';
                     <li><a href="Index.php" class="active"><i class="uil uil-postcard"></i>
                         <h5>Manage Posts</h5>
                     </a></li>
+
+                    <!-- Admin Only Features -->
+                    <?php if($is_admin): ?>
                     <li><a href="Add-User.php"><i class="uil uil-user-plus"></i>
                         <h5>Add User</h5>
                     </a></li>
                     <li><a href="Manage-User.php"><i class="uil uil-users-alt"></i>
-                        <h5>Manage User</h5>
+                        <h5>Manage Users</h5>
                     </a></li>
                     <li><a href="Add-Category.php"><i class="uil uil-edit"></i>
                         <h5>Add Category</h5>
@@ -28,10 +31,11 @@ include 'Partials/Header.php';
                     <li><a href="Manage-Categories.php"><i class="uil uil-clipboard-notes"></i>
                         <h5>Manage Categories</h5>
                     </a></li>
+                    <?php endif; ?>
                 </ul>
             </aside>
             <main>
-                <h2>Manage Users</h2>
+                <h2><?= $is_admin ? 'Admin Dashboard - Manage Posts' : 'Author Dashboard - My Posts' ?></h2>
                 <table>
                     <thead>
                         <tr>

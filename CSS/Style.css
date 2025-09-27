@@ -69,7 +69,7 @@ body {
     color: #f2f2fe !important;
     background: #0F0F3E !important;
     overflow-x: hidden !important;
-    font-size: 0.9rem !important;
+    font-size: 1.125rem !important;
     margin-bottom: 6rem !important;
 }   
 
@@ -96,22 +96,22 @@ h1, h2, h3, h4, h5, h6 {
 }
 
 h1 {
-    font-size: 3rem !important;
+    font-size: 3.75rem !important;
     margin: 1rem 0 !important;
 }
 
 h2 {
-    font-size: 1.7rem !important;
+    font-size: 2.125rem !important;
     margin: 1rem 0 !important;
 }
 
 h3 {
-    font-size: 1.1rem !important;
+    font-size: 1.375rem !important;
     margin: 0.8rem 0 0.5rem !important;
 }
 
 h4 {
-    font-size: 1rem !important;
+    font-size: 1.25rem !important;
 }
 
 a {
@@ -132,6 +132,11 @@ h1 a, h2 a, h3 a, h4 a, h5 a, h6 a {
 
 p, h5, small {
     color: white !important;
+}
+
+p {
+    font-size: 2.5rem !important;
+    line-height: 1.6 !important;
 }
 
 /*==============================================================================
@@ -159,10 +164,10 @@ nav button {
     display: flex !important;
     align-items: center !important;
     justify-content: space-between !important;
-    max-width: none !important;
+    max-width: 1200px !important;
     width: 100% !important;
-    margin: 0 !important;
-    padding: 0 !important;
+    margin: 0  !important;
+    padding: 0 5rem !important;
 }
 
 .avatar {
@@ -187,7 +192,7 @@ nav button {
 .nav__logo {
     color: var(--color-white) !important;
     font-weight: 600 !important;
-    font-size: 1.2rem !important;
+    font-size: 1.5rem !important;
     text-decoration: none !important;
 }
 
@@ -278,7 +283,7 @@ nav button {
     padding: 0.5rem 1rem !important;
     border-radius: var(--card-border-radius-2) !important;
     font-weight: 600 !important;
-    font-size: 0.8rem !important;
+    font-size: 1rem !important;
     text-align: center !important; 
     text-decoration: none !important;
     transition: var(--transition) !important;
@@ -332,13 +337,13 @@ nav button {
 }
 
 .post__author-info h5 {
-    font-size: 0.85rem !important; 
+    font-size: 1.0625rem !important; 
     margin: 0 !important;
     font-weight: 500 !important;
 }
 
 .post__author-info small {
-    font-size: 0.7rem !important;  
+    font-size: 0.875rem !important;  
     margin-top: 0.2rem !important;
     display: block !important;
     opacity: 0.9 !important;
@@ -387,13 +392,15 @@ nav button {
 }
 
 .post__body {
-    margin-bottom: 1.5rem !important;  
+    margin-bottom: 1.5rem !important;
+    font-size: 2.5rem !important;
+    line-height: 1.6 !important;
 }
 
 .post__title {
     margin-bottom: 1rem !important;
     font-weight: 700 !important;     
-    font-size: 1.5rem !important;    
+    font-size: 1.875rem !important;    
     color: var(--color-white) !important;
     text-transform: capitalize !important;  
 }
@@ -472,7 +479,7 @@ footer {
     display: flex !important;
     align-items: center !important;
     justify-content: center !important;
-    font-size: 1.2rem !important;
+    font-size: 1.5rem !important;
     color: var(--color-white) !important;
     text-decoration: none !important;
     transition: var(--transition) !important;
@@ -498,7 +505,7 @@ footer {
 footer h4 {
     color: var(--color-white) !important;
     margin-bottom: 1rem !important;
-    font-size: 1.2rem !important;
+    font-size: 1.5rem !important;
     text-align: center !important;
 }
 
@@ -575,7 +582,7 @@ footer ul a:hover {
     outline: none !important;
     color: #ffffff !important;
     font-family: 'Montserrat', sans-serif !important;
-    font-size: 1rem !important;
+    font-size: 1.25rem !important;
     font-weight: 400 !important;
     height: 100% !important;
     
@@ -591,7 +598,7 @@ footer ul a:hover {
     padding: 0.8rem 2rem !important;
     border-radius: 6px !important; 
     font-weight: 600 !important;
-    font-size: 0.95rem !important;
+    font-size: 1.1875rem !important;
     height: 2.5rem !important;
     display: flex !important;
     align-items: center !important;
@@ -671,9 +678,9 @@ footer ul a:hover {
     margin-left: auto !important;
     margin-right: auto !important;
     max-width: 85% !important;
-    line-height: 1.8rem !important;
+    line-height: 3rem !important;
     color: var(--color-gray-200) !important;
-    font-size: 1.1rem !important;
+    font-size: 2.5rem !important;
     text-indent: 1.5rem !important;
     width: 100% !important;
 }
@@ -998,17 +1005,21 @@ footer ul a:hover {
     align-items: center !important;
     align-content: center !important;
     width: 100% !important;
+    min-height: 100vh !important;
     padding: 3rem !important;
     box-sizing: border-box !important;
 }
 
 .form__section-container {
     width: 100% !important;
-    margin-top: 5rem !important;
+    max-width: 500px !important;
+    margin: auto !important;
     padding: 3rem 2.5rem !important;
     background: var(--color-bg) !important;
     text-align: center !important;
     position: relative !important;
+    border-radius: 1rem !important;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.2) !important;
 }
 
 .form__section-container h2 {
@@ -1091,7 +1102,7 @@ form textarea {
     color: #f2f2fe !important;
     border: none !important;
     border-radius: 8px !important;
-    font-size: 1rem !important;
+    font-size: 1.25rem !important;
     font-family: 'Montserrat', sans-serif !important;
     box-shadow: none !important;
     outline: none !important;
@@ -1162,7 +1173,7 @@ form button[type="submit"], .btn {
     color: var(--color-white) !important;
     border: none !important;
     border-radius: var(--card-border-radius-2) !important;
-    font-size: 1rem !important;
+    font-size: 1.25rem !important;
     font-weight: 600 !important;
     cursor: pointer !important;
     transition: var(--transition) !important;
@@ -1592,7 +1603,7 @@ form textarea::placeholder {
 
     .nav__container {
         position: relative !important;
-        padding: 0 !important;
+        padding: 0 1.5rem !important;
     }
 
     nav button {

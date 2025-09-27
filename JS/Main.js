@@ -177,14 +177,14 @@ function initializeOtherManagers() {
                 e.preventDefault();
                 const label = (this.textContent || '').trim();
                 if (!label) return;
-                window.location.href = 'Category-Post.html?category=' + encodeURIComponent(label);
+                window.location.href = 'Category-Post.php?category=' + encodeURIComponent(label);
             });
         });
     }
     
-    // Apply category filter on Category-Post.html if ?category= is present
+    // Apply category filter on Category-Post.php if ?category= is present
     (function applyCategoryFromUrl() {
-        if (!/Category-Post\.html$/i.test(window.location.pathname)) return;
+        if (!/Category-Post\.php$/i.test(window.location.pathname)) return;
         const params = new URLSearchParams(window.location.search);
         const selected = (params.get('category') || '').trim();
         if (!selected) return;
@@ -220,7 +220,7 @@ function initializeOtherManagers() {
                 // Capture the article's content and navigate client-side
                 e.preventDefault();
                 const article = this.closest('article');
-                if (!article) return (window.location.href = this.href || 'Post.html');
+                if (!article) return (window.location.href = this.href || 'Post.php');
                 
                 const data = {
                     title: (article.querySelector('.post__title a')?.textContent || '').trim(),
@@ -234,14 +234,15 @@ function initializeOtherManagers() {
                 try {
                     sessionStorage.setItem('currentPost', JSON.stringify(data));
                 } catch (_) {}
-                window.location.href = 'Post.html';
+                window.location.href = 'Post.php';
             });
         });
     })();
 
     // Post page renderer: read from sessionStorage and render
     (function renderSinglePost() {
-        if (!/Post\.html$/i.test(window.location.pathname)) return;
+        if (!/Post\.php$/i.test(window.location.pathname)) return;
+        
         let raw;
         try {
             raw = sessionStorage.getItem('currentPost');
@@ -276,10 +277,10 @@ function initializeOtherManagers() {
         const content = document.querySelector('.singlepost__content');
         if (content && post.body) {
             content.innerHTML = '';
-            const p = document.createElement('p');
-            p.className = 'post__body';
+                const p = document.createElement('p');
+                p.className = 'post__body';
             p.textContent = post.body;
-            content.appendChild(p);
+                content.appendChild(p);
         }
     })();
     

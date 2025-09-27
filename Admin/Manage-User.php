@@ -8,14 +8,36 @@ $query = "SELECT * FROM users WHERE id != $current_admin_id";
 $users = mysqli_query($connection, $query);
 ?>
 
-    <!--=================================== END OF NAVIGATION ===================================-->
-
     <?php if(isset($_SESSION['Add-User-success'])): ?>
         <div class="dashboard-alert-container">
             <div class="alert__message success">
                 <p>
                     <?= $_SESSION['Add-User-success'];
                     unset($_SESSION['Add-User-success']);
+                    ?>
+                </p>
+            </div>
+        </div>
+    <?php endif ?>
+
+    <?php if(isset($_SESSION['Edit-User-Success'])): ?> // Show if Edit-User-Success is set
+        <div class="dashboard-alert-container">
+            <div class="alert__message success">
+                <p>
+                    <?= $_SESSION['Edit-User-Success'];
+                    unset($_SESSION['Edit-User-Success']);
+                    ?>
+                </p>
+            </div>
+        </div>
+    <?php endif ?>
+
+        <?php if(isset($_SESSION['Edit-User-Not-Success'])): ?> // Show if Edit-User-not Success is set
+        <div class="dashboard-alert-container">
+            <div class="alert__message error">
+                <p>
+                    <?= $_SESSION['Edit-User-Not-Success'];
+                    unset($_SESSION['Edit-User-Not-Success']);
                     ?>
                 </p>
             </div>

@@ -20,11 +20,13 @@ unset($_SESSION['Add-User-data']);
         <div class="container form__section-container">
             <h2>Add User</h2>
             <?php if(isset($_SESSION['Add-User'])): ?>
-                <div class="alert__message error">
-                    <p>
-                        <?= $_SESSION['Add-User'];
-                        unset($_SESSION['Add-User']); ?>
-                    </p>
+                <div class="dashboard-alert-container">
+                    <div class="alert__message error">
+                        <p>
+                            <?= $_SESSION['Add-User'];
+                            unset($_SESSION['Add-User']); ?>
+                        </p>
+                    </div>
                 </div>
             <?php endif; ?>
             <form action="<?= ROOT_URL ?>Admin/Add-User-logic.php" enctype="multipart/form-data" method="post">

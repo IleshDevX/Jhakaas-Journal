@@ -10,17 +10,19 @@ $users = mysqli_query($connection, $query);
 
     <!--=================================== END OF NAVIGATION ===================================-->
 
-    <section class="dashboard">
-
     <?php if(isset($_SESSION['Add-User-success'])): ?>
-            <div class="alert__message success container">
+        <div class="dashboard-alert-container">
+            <div class="alert__message success">
                 <p>
                     <?= $_SESSION['Add-User-success'];
                     unset($_SESSION['Add-User-success']);
                     ?>
                 </p>
             </div>
-            <?php endif ?>
+        </div>
+    <?php endif ?>
+
+    <section class="dashboard">
 
         <div class="container dashboard__container">
             <button id="show_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-right"></i></button>

@@ -1092,6 +1092,40 @@ footer ul a:hover {
     }
 }
 
+/* Dashboard Alert Messages */
+.dashboard-alert-container {
+    position: fixed !important;
+    top: 6rem !important;
+    left: 50% !important;
+    transform: translateX(-50%) !important;
+    z-index: 1000 !important;
+    width: 90% !important;
+    max-width: 600px !important;
+    padding: 0 1rem !important;
+}
+
+.dashboard-alert-container .alert__message {
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    backdrop-filter: blur(10px) !important;
+    font-size: 1.125rem !important;
+    font-weight: 500 !important;
+    text-align: center !important;
+    justify-content: center !important;
+}
+
+.dashboard-alert-container .alert__message.success {
+    background: linear-gradient(135deg, rgba(0, 196, 118, 0.2), rgba(0, 196, 118, 0.1)) !important;
+    color: #00c476 !important;
+    border-color: rgba(0, 196, 118, 0.3) !important;
+}
+
+.dashboard-alert-container .alert__message.error {
+    background: linear-gradient(135deg, rgba(220, 20, 60, 0.2), rgba(220, 20, 60, 0.1)) !important;
+    color: #dc143c !important;
+    border-color: rgba(220, 20, 60, 0.3) !important;
+}
+
 form input[type="text"],
 form input[type="email"],
 form input[type="password"],

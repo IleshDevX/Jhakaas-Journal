@@ -1,9 +1,56 @@
 <?php
 include 'Partials/Header.php';
+
+//Fetch categories from database
+$query = "SELECT * FROM categories ORDER BY title";
+$categories = mysqli_query($connection, $query);
 ?>
 
     <!--=================================== END OF NAVIGATION ===================================-->
-
+        <?php if(isset($_SESSION['Add-Category-Success'])): // Show if Add-Category-Success is set ?> 
+            <div class="dashboard-alert-container">
+                <div class="alert__message success">
+                    <p>
+                        <?= $_SESSION['Add-Category-Success'];
+                        unset($_SESSION['Add-Category-Success']);
+                        ?>
+                    </p>
+                </div>
+            </div>
+        <?php endif ?>
+        <?php if(isset($_SESSION['Add-Category-Not-Success'])): // Show if Add-Category-Not-Success is set ?> 
+            <div class="dashboard-alert-container">
+                <div class="alert__message error">
+                    <p>
+                        <?= $_SESSION['Add-Category-Not-Success'];
+                        unset($_SESSION['Add-Category-Not-Success']);
+                        ?>
+                    </p>
+                </div>
+            </div>
+        <?php endif ?>
+        <?php if(isset($_SESSION['Edit-Category-Success'])): ?>
+                <div class="dashboard-alert-container">
+                    <div class="alert__message success">
+                        <p>
+                            <?= $_SESSION['Edit-Category-Success'];
+                            unset($_SESSION['Edit-Category-Success']);
+                            ?>
+                        </p>
+                    </div>
+                </div>
+        <?php endif ?>
+        <?php if(isset($_SESSION['Edit-Category-Not-Success'])): ?>
+                <div class="dashboard-alert-container">
+                    <div class="alert__message error">
+                        <p>
+                            <?= $_SESSION['Edit-Category-Not-Success'];
+                            unset($_SESSION['Edit-Category-Not-Success']);
+                            ?>
+                        </p>
+                    </div>
+                </div>
+        <?php endif ?>
     <section class="dashboard">
         <div class="container dashboard__container">
             <button id="show_sidebar-btn" class="sidebar_toggle"><i class="uil uil-angle-right"></i></button>
@@ -38,6 +85,7 @@ include 'Partials/Header.php';
             </aside>
             <main>
                 <h2>Manage Categories</h2>
+                <?php if(mysqli_num_rows($categories) > 0): ?>
                 <table>
                     <thead>
                         <tr>
@@ -47,38 +95,21 @@ include 'Partials/Header.php';
                         </tr>
                     </thead>
                     <tbody>
+                        <?php while($category = mysqli_fetch_assoc($categories)) : ?>
                         <tr>
-                            <td>Wild Life</td>
-                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
+                            <td><?= $category['title'] ?></td>
+                            <td><a href="Edit-Category.php?id=<?= $category['id'] ?>" class="btn sm">Edit</a></td>
+                            <td><a href="Delete-Category.php?id=<?= $category['id'] ?>" class="btn sm danger">Delete</a></td>
                         </tr>
-                        <tr>
-                            <td>Science & Technology</td>
-                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <td>Art</td>
-                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <td>Travel</td>
-                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <td>Food</td>
-                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
-                        </tr>
-                        <tr>
-                            <td>Music</td>
-                            <td><a href="Edit-Category.php" class="btn sm">Edit</a></td>
-                            <td><a href="Delete-Category.php" class="btn sm danger">Delete</a></td>
-                        </tr>
+                        <?php endwhile ?>
                     </tbody>
                 </table>
+                <?php else: ?>
+                <div class="dashboard-alert-container">
+                    <div class="alert__message error">
+                        <p>No categories found.</p>
+                    </div>
+                <?php endif ?>
             </main>
         </div>
     </section>

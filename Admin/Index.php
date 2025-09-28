@@ -16,7 +16,6 @@ include 'Partials/Header.php';
                     <li><a href="Index.php" class="active"><i class="uil uil-postcard"></i>
                         <h5>Manage Posts</h5>
                     </a></li>
-
                     <!-- Admin Only Features -->
                     <?php if($is_admin): ?>
                     <li><a href="Add-User.php"><i class="uil uil-user-plus"></i>
@@ -35,7 +34,7 @@ include 'Partials/Header.php';
                 </ul>
             </aside>
             <main>
-                <h2><?= $is_admin ? 'Admin Dashboard - Manage Posts' : 'Author Dashboard - My Posts' ?></h2>
+                <h2><?= $is_admin ? 'Manage Posts' : 'Author Dashboard - My Posts' ?></h2>
                 <table>
                     <thead>
                         <tr>

@@ -19,8 +19,18 @@ $users = mysqli_query($connection, $query);
             </div>
         </div>
     <?php endif ?>
-
-    <?php if(isset($_SESSION['Edit-User-Success'])): ?> // Show if Edit-User-Success is set
+    <?php if(isset($_SESSION['Add-User-Not-success'])): ?>
+        <div class="dashboard-alert-container">
+            <div class="alert__message error">
+                <p>
+                    <?= $_SESSION['Add-User-Not-success'];
+                    unset($_SESSION['Add-User-Not-success']);
+                    ?>
+                </p>
+            </div>
+        </div>
+    <?php endif ?>
+    <?php if(isset($_SESSION['Edit-User-Success'])): // Show if Edit-User-Success is set ?> 
         <div class="dashboard-alert-container">
             <div class="alert__message success">
                 <p>
@@ -32,7 +42,7 @@ $users = mysqli_query($connection, $query);
         </div>
     <?php endif ?>
 
-        <?php if(isset($_SESSION['Edit-User-Not-Success'])): ?> // Show if Edit-User-not Success is set
+        <?php if(isset($_SESSION['Edit-User-Not-Success'])): // Show if Edit-User-not Success is set ?> 
         <div class="dashboard-alert-container">
             <div class="alert__message error">
                 <p>
@@ -80,6 +90,7 @@ $users = mysqli_query($connection, $query);
             </aside>
             <main>
                 <h2>Manage Users</h2>
+                <?php if(mysqli_num_rows($users) > 0) : ?>
                 <table>
                     <thead>
                         <tr>
@@ -98,6 +109,11 @@ $users = mysqli_query($connection, $query);
                         <?php endwhile; ?>
                     </tbody>
                 </table>
+                <?php else: ?>
+                    <div class="alert__message error">
+                        <p>No users found.</p>
+                    </div>
+                <?php endif ?>
             </main>
         </div>
     </section>

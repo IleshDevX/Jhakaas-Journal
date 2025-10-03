@@ -699,9 +699,9 @@ footer ul a:hover {
     margin-left: auto !important;
     margin-right: auto !important;
     max-width: 85% !important;
-    line-height: 0.8rem !important;
+    line-height: 1.8rem !important;
     color: var(--color-gray-200) !important;
-    font-size: 0.8rem !important;
+    font-size: 1.1rem !important;
     text-indent: 0.8rem !important;
     width: 100% !important;
 }

@@ -1,5 +1,5 @@
 <?php
-require 'Config/Database.php';
+require_once dirname(__DIR__) . '/Config/Database.php';
 
 // fetch the user from database if user is logged in
 if(isset($_SESSION['user-id'])){
@@ -16,7 +16,7 @@ if(isset($_SESSION['user-id'])){
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Jhakaas Journal The Blog Website</title>
+    <title><?= isset($page_title) ? $page_title : "Jhakaas Journal The Blog Website" ?></title>
     <!--CUSTOM STYLESHEET-->
     <link rel="stylesheet" href="<?= ROOT_URL ?>CSS/Style.css">
     <!--ICONSCOUT CDN-->

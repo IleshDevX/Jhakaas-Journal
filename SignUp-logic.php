@@ -1,5 +1,5 @@
 <?php
-require 'Config/Database.php';
+require_once 'Config/Database.php';
 
 // Get Signup form data if signup button was clicked
 if (isset($_POST['submit'])) {

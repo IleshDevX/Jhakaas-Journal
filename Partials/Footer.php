@@ -1,5 +1,5 @@
 <?php
-require 'Config/Database.php';
+require_once dirname(__DIR__) . '/Config/Database.php';
 ?>
 
     <footer>

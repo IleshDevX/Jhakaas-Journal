@@ -2,7 +2,7 @@
 if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
-require 'Config/Database.php';
+require_once 'Config/Database.php';
 
 if(isset($_POST['submit'])) {
     // Get form data

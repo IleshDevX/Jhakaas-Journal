@@ -1,4 +1,34 @@
 <?php
+// Get post ID from URL parameter
+$post_id = isset($_GET['id']) ? filter_var($_GET['id'], FILTER_VALIDATE_INT) : 0;
+
+if ($post_id) {
+    // Fetch the specific post with author and category information
+    $post_query = "SELECT p.*, u.first_name, u.last_name, u.username, u.avatar, c.title as category_title 
+                   FROM posts p 
+                   LEFT JOIN users u ON p.author_id = u.id 
+                   LEFT JOIN categories c ON p.category_id = c.id 
+                   WHERE p.id = ? 
+                   LIMIT 1";
+    
+    $stmt = mysqli_prepare($connection, $post_query);
+    mysqli_stmt_bind_param($stmt, "i", $post_id);
+    mysqli_stmt_execute($stmt);
+    $result = mysqli_stmt_get_result($stmt);
+    $post = mysqli_fetch_assoc($result);
+    mysqli_stmt_close($stmt);
+}
+
+// If no post found or no ID provided, redirect to home page
+if (!isset($post) || !$post) {
+    header('Location: ' . ROOT_URL . 'Index.php');
+    exit();
+}
+
+// Set dynamic page title
+$page_title = htmlspecialchars($post['title']) . " - Jhakaas Journal";
+
+// Include header after setting the page title
 include 'Partials/Header.php';
 ?>
 
@@ -7,29 +37,72 @@ include 'Partials/Header.php';
     <section class="singlepost">
         <div class="container singlepost__container">
             <div class="singlepost__header">
-                <h2><a href="Post.php">Panther chameleons are rainbow-coloured lizards</a></h2>
+                <h2><a href="<?= ROOT_URL ?>Post.php?id=<?= $post['id'] ?>"><?= htmlspecialchars($post['title']) ?></a></h2>
                 <div class="post__author">
                     <div class="post__author-avatar">
-                        <img src="./Images/avatar2.jpg">
+                        <img src="<?= ROOT_URL ?>Images/<?= htmlspecialchars($post['avatar']) ?>" alt="<?= htmlspecialchars($post['first_name']) ?>">
                     </div>
                     <div class="post__author-info">
-                        <h5>By: Tilak Prajapati</h5>
-                        <small>Feb 10, 2025 - 11:00 AM</small>
+                        <h5>By: <?= htmlspecialchars(($post['first_name'] ?? '') . ' ' . ($post['last_name'] ?? '')) ?></h5>
+                        <small><?= date('M d, Y - g:i A', strtotime($post['date_time'])) ?></small>
                     </div>
                 </div>
             </div>
             <div class="singlepost__thumbnail">
-                <img src="./Images/blog3.jpg">
+                <img src="<?= ROOT_URL ?>Images/<?= htmlspecialchars($post['thumbnail']) ?>" alt="<?= htmlspecialchars($post['title']) ?>">
             </div>
             <div class="singlepost__content">
-                <p class="post__body"> The panther chameleon (Furcifer pardalis) is a brightly colored reptile first described in 1829 by French naturalist Georges Cuvier. Its scientific name is linked to its unique features: Furcifer comes from the Latin word for "forked," referring to the split toes used for gripping branches, while pardalis means "leopard," a nod to its spotted, panther‑like markings. Even the word "chameleon" has ancient roots, coming from Greek and Akkadian words meaning "ground lion," reflecting how people have long been fascinated by these unusual lizards.
-                </p>
-                <p>
-                Native to Madagascar, the panther chameleon is admired for its dazzling range of colors, especially in males that can display shades of red, green, blue, and orange. These colors are not just beautiful but serve important purposes such as helping regulate body temperature, attracting mates, or warning rivals. Different regions of Madagascar have their own distinct color varieties, which has made this chameleon one of the most prized reptiles in the pet trade.
-                </p>                
-                <p>
-                Although officially considered one species, research suggests that the panther chameleon might actually be a group of closely related species. Studies show that populations from different areas often don't interbreed easily, indicating they may be more distinct than once thought. This discovery is important for conservation, since habitat loss and over‑collection threaten the species. Protecting them and understanding their diversity will help safeguard Madagascar's unique ecosystems.
-                </p>
+                <div class="post__body" style="
+                    line-height: 1.8; 
+                    font-size: 1.1rem; 
+                    color: #333; 
+                    text-align: justify; 
+                    margin-bottom: 2rem;
+                    max-width: none;
+                    word-wrap: break-word;
+                    white-space: pre-wrap;
+                ">
+                    <?php 
+                        // Display the full post content with proper formatting
+                        $content = $post['body'];
+                        
+                        // Check if content exists and is not empty
+                        if (!empty($content)) {
+                            // Split content into paragraphs for better formatting
+                            $paragraphs = explode("\n\n", $content);
+                            
+                            foreach ($paragraphs as $paragraph) {
+                                $paragraph = trim($paragraph);
+                                if (!empty($paragraph)) {
+                                    echo '<p style="margin-bottom: 1.5rem;">' . 
+                                         nl2br(htmlspecialchars($paragraph, ENT_QUOTES, 'UTF-8')) . 
+                                         '</p>';
+                                }
+                            }
+                        } else {
+                            echo '<p>No content available for this post.</p>';
+                        }
+                    ?>
+                </div>
+                
+                <!-- Category and navigation -->
+                <div class="post__navigation" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e0e0e0;">
+                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
+                        <div>
+                            <strong>Category:</strong> 
+                            <a href="<?= ROOT_URL ?>Category-Post.php?id=<?= $post['category_id'] ?>" 
+                               style="color: #6f6af8; text-decoration: none; font-weight: 500;">
+                                <?= htmlspecialchars($post['category_title']) ?>
+                            </a>
+                        </div>
+                        <div>
+                            <a href="<?= ROOT_URL ?>Blog.php" 
+                               style="background: #6f6af8; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
+                                ← Back to All Posts
+                            </a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </section>
@@ -37,6 +110,7 @@ include 'Partials/Header.php';
     <!--=================================== END OF SINGLE POSTS  ===================================-->
 
 
+
 <?php
-include 'Partials/Header.php';
+include 'Partials/Footer.php';
 ?>

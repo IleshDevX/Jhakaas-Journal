@@ -1,5 +1,8 @@
 <?php
 if (session_status() == PHP_SESSION_NONE) {
+    // Set session parameters for better stability
+    ini_set('session.cookie_lifetime', 3600); // 1 hour
+    ini_set('session.gc_maxlifetime', 3600);
     session_start();
 }
 if (!defined('ROOT_URL')) {

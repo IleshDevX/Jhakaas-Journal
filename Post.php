@@ -91,25 +91,6 @@ include 'Partials/Header.php';
                         }
                     ?>
                 </div>
-                
-                <!-- Category and navigation -->
-                <div class="post__navigation" style="margin-top: 2rem; padding-top: 2rem; border-top: 1px solid #e0e0e0;">
-                    <div style="display: flex; justify-content: space-between; align-items: center; flex-wrap: wrap; gap: 1rem;">
-                        <div>
-                            <strong>Category:</strong> 
-                            <a href="<?= ROOT_URL ?>Category-Post.php?id=<?= $post['category_id'] ?>" 
-                               style="color: #6f6af8; text-decoration: none; font-weight: 500;">
-                                <?= htmlspecialchars($post['category_title']) ?>
-                            </a>
-                        </div>
-                        <div>
-                            <a href="<?= ROOT_URL ?>Blog.php" 
-                               style="background: #6f6af8; color: white; padding: 0.5rem 1rem; text-decoration: none; border-radius: 4px; font-size: 0.9rem;">
-                                ← Back to All Posts
-                            </a>
-                        </div>
-                    </div>
-                </div>
             </div>
         </div>
     </section>

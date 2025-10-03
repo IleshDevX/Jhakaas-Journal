@@ -1,6 +1,7 @@
 <?php
 // Include database connection
 require_once 'Config/Database.php';
+require_once 'Config/Cookie.php';
 
 // Get post ID from URL parameter
 $post_id = isset($_GET['id']) ? filter_var($_GET['id'], FILTER_VALIDATE_INT) : 0;
@@ -30,6 +31,9 @@ if (!isset($post) || !$post) {
 
 // Set dynamic page title
 $page_title = htmlspecialchars($post['title']) . " - Jhakaas Journal";
+
+// Track recently viewed posts in cookies
+CookieManager::addRecentPost($post['id'], $post['title']);
 
 // Include header after setting the page title
 include 'Partials/Header.php';

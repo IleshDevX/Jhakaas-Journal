@@ -1,5 +1,32 @@
 <?php
 require_once dirname(__DIR__) . '/Config/Database.php';
+require_once dirname(__DIR__) . '/Config/Cookie.php';
+
+// Check for remember me cookie if user is not logged in
+if(!isset($_SESSION['user-id'])) {
+    $remember_data = CookieManager::getRememberMe();
+    if($remember_data) {
+        // Verify user exists and auto-login
+        $user_id = $remember_data['user_id'];
+        $query = "SELECT * FROM users WHERE id = ? AND username = ?";
+        $stmt = mysqli_prepare($connection, $query);
+        mysqli_stmt_bind_param($stmt, "is", $user_id, $remember_data['username']);
+        mysqli_stmt_execute($stmt);
+        $result = mysqli_stmt_get_result($stmt);
+        
+        if($user = mysqli_fetch_assoc($result)) {
+            // Auto-login user
+            $_SESSION['user-id'] = $user['id'];
+            if($user['is_admin'] == 1) {
+                $_SESSION['user_is_admin'] = true;
+            }
+        } else {
+            // Invalid remember me cookie, delete it
+            CookieManager::delete(CookieManager::REMEMBER_ME);
+        }
+        mysqli_stmt_close($stmt);
+    }
+}
 
 // fetch the user from database if user is logged in
 if(isset($_SESSION['user-id'])){

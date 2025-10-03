@@ -54,11 +54,16 @@ require_once dirname(__DIR__) . '/Config/Database.php';
             </article>
         </div>  
         <div class="footer__copyright">
-            <small>Copyright &copy; 2025 Jhakaas Journal By IleshDevX</small>
+            <small>Copyright &copy; 2025 Jhakaas Journal By IleshDevX | 
+                <a href="<?= ROOT_URL ?>CookieSettings.php" style="color: #6f6af8; text-decoration: none;">Cookie Settings</a>
+            </small>
         </div>
     </footer>
 
     <!--=================================== END OF FOOTER  ===================================-->
+
+    <!-- Cookie Consent Banner -->
+    <?php include dirname(__DIR__) . '/Partials/CookieConsent.php'; ?>
 
     <script src="<?= ROOT_URL ?>JS/Main.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>

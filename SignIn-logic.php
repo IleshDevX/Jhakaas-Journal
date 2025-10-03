@@ -3,6 +3,7 @@ if (session_status() == PHP_SESSION_NONE) {
     session_start();
 }
 require_once 'Config/Database.php';
+require_once 'Config/Cookie.php';
 
 if(isset($_POST['submit'])) {
     // Get form data
@@ -30,6 +31,25 @@ if(isset($_POST['submit'])) {
                 if($user_record['is_admin'] == 1) {
                     $_SESSION['user_is_admin'] = true;
                 }
+                
+                // Handle "Remember Me" functionality
+                if(isset($_POST['remember_me']) && $_POST['remember_me'] == '1') {
+                    CookieManager::setRememberMe(
+                        $user_record['id'], 
+                        $user_record['username'], 
+                        30 // Remember for 30 days
+                    );
+                }
+                
+                // Set user preferences cookie
+                $user_preferences = [
+                    'user_id' => $user_record['id'],
+                    'username' => $user_record['username'],
+                    'is_admin' => $user_record['is_admin'],
+                    'last_login' => time()
+                ];
+                CookieManager::setUserPreferences($user_preferences);
+                
                 // Log user in
                 header('location: ' . ROOT_URL . 'Admin/');
                 die();

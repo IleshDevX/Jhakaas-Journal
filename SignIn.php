@@ -46,6 +46,13 @@ unset($_SESSION['signin-data']);
         <form action="<?= ROOT_URL ?>SignIn-logic.php" method="POST">
             <input type="text" name="username" value="<?= $username_email ?>" placeholder="Username or Email">
             <input type="password" name="password" value="<?= $password ?>" placeholder="Password">
+            
+            <!-- Remember Me Checkbox -->
+            <div style="display: flex; align-items: center; margin: 1rem 0; gap: 0.5rem;">
+                <input type="checkbox" name="remember_me" value="1" id="remember_me" style="margin: 0;">
+                <label for="remember_me" style="margin: 0; font-size: 0.9rem; color: #666;">Remember me for 30 days</label>
+            </div>
+            
             <button type="submit" name="submit" class="btn">Sign In</button>
             <small>Don't have an account? <a href="SignUp.php">Sign Up</a></small>
         </form>

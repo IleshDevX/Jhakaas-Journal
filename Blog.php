@@ -1,10 +1,14 @@
 <?php
+require_once 'Config/Cookie.php';
 include 'Partials/Header.php';
 
 // Fetch all posts from database with author and category information
 $search = '';
 if(isset($_GET['search']) && !empty($_GET['search'])) {
     $search = filter_var($_GET['search'], FILTER_SANITIZE_FULL_SPECIAL_CHARS);
+    
+    // Track search in cookie
+    CookieManager::addSearchHistory($search);
     $query = "SELECT p.*, u.first_name, u.last_name, u.username, u.avatar, c.title as category_title 
               FROM posts p 
               LEFT JOIN users u ON p.author_id = u.id 
@@ -82,6 +86,22 @@ $posts = mysqli_query($connection, $query);
     </section>
 
     <!--=================================== END OF POSTS  ===================================-->
+
+    <!-- Cookie-based Widgets Sidebar -->
+    <section class="widgets-section" style="background: #f8f9fa; padding: 3rem 0;">
+        <div class="container">
+            <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(300px, 1fr)); gap: 2rem;">
+                <?php 
+                require_once 'Partials/CookieWidgets.php';
+                echo displayRecentPosts(5);
+                ?>
+                
+                <?php echo displaySearchHistory(5); ?>
+                
+                <?php echo getUserPreferencesWidget(); ?>
+            </div>
+        </div>
+    </section>
 
     <section class="Category__button">
         <div class="container category__buttons-container">

@@ -1,4 +1,7 @@
 <?php
+// Include database connection
+require_once 'Config/Database.php';
+
 // Get post ID from URL parameter
 $post_id = isset($_GET['id']) ? filter_var($_GET['id'], FILTER_VALIDATE_INT) : 0;
 
